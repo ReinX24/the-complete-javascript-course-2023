@@ -1,7 +1,5 @@
 'use strict';
 
-// TODO: resume @12 PROJECT #2 Modal Window
-
 // Evaluates the game
 const evaluateGame = () => {
 	// When there is no input, show warning message and terminate script
