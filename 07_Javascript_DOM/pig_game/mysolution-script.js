@@ -24,6 +24,9 @@ class PigGame {
 	}
 
 	startGame() {
+		// TODO: hide the dice image at the start of the game
+		this.diceImg.classList.add('hidden');
+
 		this.p1TotalScoreElement.innerText = 0;
 		this.p2TotalScoreElement.innerText = 0;
 
@@ -59,14 +62,15 @@ class PigGame {
 		// Start back to player 1
 		this.p1Section.classList.add('player--active');
 		this.p2Section.classList.remove('player--active');
-		// Set back dice to 1
-		this.diceImg.src = 'dice-1.png';
+		// Set back dice to hidden
+		this.diceImg.classList.add('hidden');
 	}
 
 	generateRandomDice() {
 		// Generating a random number between 1 and 6 (inclusive)
 		const randomDice = Math.round(Math.random() * (6 - 1)) + 1;
 		this.randomDiceNumber = randomDice;
+		this.diceImg.classList.remove('hidden');
 		this.diceImg.src = `dice-${randomDice}.png`;
 	}
 
