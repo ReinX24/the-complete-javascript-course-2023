@@ -1,8 +1,7 @@
 'use strict';
 
-// TODO: resume @04 Destructuring Objects
+// TODO: resume @05 The Spread Operator
 
-// 03 Destructuring Arrays
 const restaurant = {
 	name: 'Classico Italiano',
 	location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -10,14 +9,80 @@ const restaurant = {
 	starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
 	mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+	openingHours: {
+		thu: {
+			open: 12,
+			close: 22,
+		},
+		fri: {
+			open: 11,
+			close: 23,
+		},
+		sat: {
+			open: 0, // Open 24 hours
+			close: 24,
+		},
+	},
+
 	order: function (starterIndex, mainIndex) {
 		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
 	},
+
+	orderDelivery: function ({
+		starterIndex = 1,
+		mainIndex = 0,
+		time = '20:00',
+		address = 'N/A',
+	} = orderObj) {
+		console.log(
+			`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+		);
+	},
 };
 
+restaurant.orderDelivery({
+	address: 'Via del Sole, 21',
+	starterIndex: 1,
+});
+
+restaurant.orderDelivery({
+	time: '22:30',
+	address: 'Via del Sole, 21',
+	mainIndex: 2,
+	starterIndex: 2,
+});
+
+// Nested objects
+// const {
+// 	fri: { open: o, close: c },
+// } = restaurant.openingHours;
+// console.log(o, c);
+
+// Mutating variables
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+
+// ({ a, b } = obj);
+// console.log(a, b);
+
 // Default values
-const [p = 1, q = 1, r = 1] = [8, 9];
-console.log(p, q, r);
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
+
+// const {
+// 	name: restaurantName,
+// 	openingHours: hours,
+// 	categories: tags,
+// } = restaurant;
+// console.log(restaurant, hours, tags);
+
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+
+// Default values
+// const [p = 1, q = 1, r = 1] = [8, 9];
+// console.log(p, q, r);
 
 // Nested destructuring
 // const nested = [2, 4, [5, 6]];
