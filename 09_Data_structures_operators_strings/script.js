@@ -1,6 +1,6 @@
 'use strict';
 
-// TODO: resume @05 The Spread Operator
+// TODO: resume @005, 15:00 min
 
 const restaurant = {
 	name: 'Classico Italiano',
@@ -28,29 +28,96 @@ const restaurant = {
 		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
 	},
 
-	orderDelivery: function ({
-		starterIndex = 1,
-		mainIndex = 0,
-		time = '20:00',
-		address = 'N/A',
-	} = orderObj) {
+	orderPasta: function (ing1, ing2, ing3) {
 		console.log(
-			`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+			`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
 		);
 	},
 };
 
-restaurant.orderDelivery({
-	address: 'Via del Sole, 21',
-	starterIndex: 1,
-});
+const ingredients = [
+	prompt("Let's make pasta! Ingredient 1?"),
+	prompt('Ingredient 2?'),
+	prompt('Ingredient 3?'),
+];
+console.log(ingredients);
 
-restaurant.orderDelivery({
-	time: '22:30',
-	address: 'Via del Sole, 21',
-	mainIndex: 2,
-	starterIndex: 2,
-});
+// Iterables: arrays, strings, maps, sets. NOT objects
+// const str = 'Jonas';
+// const letters = [...str, ' ', 'S.'];
+// console.log(letters);
+// console.log(...str);
+// console.log('j', 'o');
+
+// Join 2 arrays
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
+
+// Copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
+
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
+
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
+
+// const newArr = [1, 2, ...arr];
+// console.log(newArr);
+
+// console.log(...newArr);
+
+// const restaurant = {
+// 	name: 'Classico Italiano',
+// 	location: 'Via Angelo Tavanti 23, Firenze, Italy',
+// 	categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+// 	starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+// 	mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+// 	openingHours: {
+// 		thu: {
+// 			open: 12,
+// 			close: 22,
+// 		},
+// 		fri: {
+// 			open: 11,
+// 			close: 23,
+// 		},
+// 		sat: {
+// 			open: 0, // Open 24 hours
+// 			close: 24,
+// 		},
+// 	},
+
+// 	order: function (starterIndex, mainIndex) {
+// 		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+// 	},
+
+// 	orderDelivery: function ({
+// 		starterIndex = 1,
+// 		mainIndex = 0,
+// 		time = '20:00',
+// 		address = 'N/A',
+// 	} = orderObj) {
+// 		console.log(
+// 			`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+// 		);
+// 	},
+// };
+
+// restaurant.orderDelivery({
+// 	address: 'Via del Sole, 21',
+// 	starterIndex: 1,
+// });
+
+// restaurant.orderDelivery({
+// 	time: '22:30',
+// 	address: 'Via del Sole, 21',
+// 	mainIndex: 2,
+// 	starterIndex: 2,
+// });
 
 // Nested objects
 // const {
