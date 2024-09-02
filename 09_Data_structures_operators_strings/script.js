@@ -1,6 +1,6 @@
 'use strict';
 
-// TODO: resume @005, 15:00 min
+// TODO: resume @009 Logical Assignment Operators
 
 const restaurant = {
 	name: 'Classico Italiano',
@@ -33,14 +33,114 @@ const restaurant = {
 			`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
 		);
 	},
+
+	orderPizza: function (mainIngredient, ...otherIngredients) {
+		console.log(mainIngredient, otherIngredients);
+	},
 };
 
-const ingredients = [
-	prompt("Let's make pasta! Ingredient 1?"),
-	prompt('Ingredient 2?'),
-	prompt('Ingredient 3?'),
-];
-console.log(ingredients);
+const rest1 = {
+	name: 'Capri',
+	numGuests: 20,
+};
+
+const rest2 = {
+	name: 'La Pizza',
+	owner: 'Giovanni Rossi',
+};
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+rest1.numGuests ||= 10;
+rest2.numGuests ||= 10;
+
+console.log(rest1);
+console.log(rest2);
+
+// restaurant.numGuests = 0;
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
+// const guestsCorrect = restaurant.numGuests ?? 10;
+// console.log(guestsCorrect);
+
+// Returns the first falsy value
+// console.log(0 && 'Jonas');
+// console.log(7 && 'Jonas');
+// console.log('Hello' && 23 && null && 'jonas');
+
+// if (restaurant.orderPizza) {
+// 	restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+// Use any data type, return any data type, short-circuiting
+// console.log(3 || 'Jonas');
+// console.log('' || 'Jonas');
+// console.log(true || 0);
+// console.log(undefined || null);
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+// restaurant.numGuests = 0;
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1);
+
+// const guests2 = restaurant.numGuests || 10;
+// console.log(guests2);
+
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+// restaurant.orderPizza('mushrooms');
+
+// Puts all passed values into an array
+// const add = function (...numbers) {
+// 	let sum = 0;
+// 	numbers.forEach((number) => {
+// 		sum += number;
+// 	});
+// 	console.log(sum);
+// };
+// add(2, 3);
+// add(5, 3, 7, 2);
+
+// const x = [23, 5, 7];
+// add(...x);
+
+// Using the rest (...) operator on objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
+
+// Spread, because on right side of =
+// const arr = [1, 2, ...[3, 4]];
+
+// Rest, because on left side of =
+// Stores the remaining variables in the array
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
+
+// const [pizza, , risotto, ...otherFood] = [
+// 	...restaurant.mainMenu,
+// 	...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
+
+// Objects
+// Copies the properties of restaurant
+// const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+// console.log(newRestaurant);
+
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Ristorante Roma';
+// console.log(newRestaurant.name);
+// console.log(restaurantCopy.name);
+
+// const ingredients = [
+// 	prompt("Let's make pasta! Ingredient 1?"),
+// 	prompt('Ingredient 2?'),
+// 	prompt('Ingredient 3?'),
+// ];
+// restaurant.orderPasta(...ingredients);
 
 // Iterables: arrays, strings, maps, sets. NOT objects
 // const str = 'Jonas';
