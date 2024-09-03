@@ -1,6 +1,21 @@
 'use strict';
 
-// TODO: resume @009 Logical Assignment Operators
+// TODO: resume @012 Enhanced Object Literals 3:23
+
+const hours = {
+	thu: {
+		open: 12,
+		close: 22,
+	},
+	fri: {
+		open: 11,
+		close: 23,
+	},
+	sat: {
+		open: 0, // Open 24 hours
+		close: 24,
+	},
+};
 
 const restaurant = {
 	name: 'Classico Italiano',
@@ -9,20 +24,8 @@ const restaurant = {
 	starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
 	mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-	openingHours: {
-		thu: {
-			open: 12,
-			close: 22,
-		},
-		fri: {
-			open: 11,
-			close: 23,
-		},
-		sat: {
-			open: 0, // Open 24 hours
-			close: 24,
-		},
-	},
+	// ES6 enhanced object literals
+	hours,
 
 	order: function (starterIndex, mainIndex) {
 		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
@@ -39,24 +42,52 @@ const restaurant = {
 	},
 };
 
-const rest1 = {
-	name: 'Capri',
-	numGuests: 20,
-};
+// Enhanced Object Literals
+console.log(restaurant);
 
-const rest2 = {
-	name: 'La Pizza',
-	owner: 'Giovanni Rossi',
-};
+// The for-of loop
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const item of menu) console.log(item);
+
+// Array of index and array element
+// for (const [i, el] of menu.entries()) {
+// 	console.log(`${i + 1}: ${el}`);
+// }
+
+// console.log([...menu.entries()]);
+
+// const rest1 = {
+// 	name: 'Capri',
+// numGuests: 20,
+// 	numGuests: 0,
+// };
+
+// const rest2 = {
+// 	name: 'La Pizza',
+// 	owner: 'Giovanni Rossi',
+// };
 
 // rest1.numGuests = rest1.numGuests || 10;
 // rest2.numGuests = rest2.numGuests || 10;
 
-rest1.numGuests ||= 10;
-rest2.numGuests ||= 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
 
-console.log(rest1);
-console.log(rest2);
+// Nullish assignment operator
+// rest1.numGuests ??= 10;
+// rest2.numGuests ??= 10;
+
+// Returns on first falsy value
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+
+// Assigns value to variable if it is truthy
+// rest1.owner &&= '<ANONYMOUS>'; // falsy
+// rest2.owner &&= '<ANONYMOUS>'; // truthy
+
+// console.log(rest1);
+// console.log(rest2);
 
 // restaurant.numGuests = 0;
 // const guests2 = restaurant.numGuests || 10;
