@@ -43,28 +43,41 @@ const game = {
 
 //* Coding Challenge #2
 // 1.
-game.scored.forEach((player, i) => {
+for (const [i, player] of game.scored.entries())
 	console.log(`Goal ${i + 1}: ${player}`);
-});
+
+// game.scored.forEach((player, i) => {
+// 	console.log(`Goal ${i + 1}: ${player}`);
+// });
 
 // 2.
-const {
-	odds: { team1, x: draw, team2 },
-} = game;
-const average = (team1 + draw + team2) / 3;
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
 console.log(average);
 
 // 3.
-console.log(`Odd of victory of Bayern Munich: ${game.odds.team1}`);
-console.log(`Odd of draw: ${game.odds.x}`);
-console.log(`Odd of victory of Borrussia Dortmund: ${game.odds.team2}`);
+for (const [team, odd] of Object.entries(game.odds)) {
+	const teamStr = team == 'x' ? 'draw' : `victory ${game[team]}`;
+	console.log(`Odd of ${teamStr} ${odd}`);
+}
+
+// const { team1, x: draw, team2 } = game.odds;
+// console.log(`Odd of victory of Bayern Munich: ${team1}`);
+// console.log(`Odd of draw: ${draw}`);
+// console.log(`Odd of victory of Borrussia Dortmund: ${team2}`);
 
 // 4.
 const scorers = {};
-game.scored.forEach((player) => {
-	scorers[player] = scorers[player] ?? 0;
-	scorers[player]++;
-});
+for (const player of Object.values(game.scored)) {
+	scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+
+// game.scored.forEach((player) => {
+// 	scorers[player] = scorers[player] ?? 0;
+// 	scorers[player]++;
+// });
 
 console.log(scorers);
 
