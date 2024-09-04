@@ -43,6 +43,106 @@ const restaurant = {
 	},
 };
 
+// Maps iteration
+// const question = new Map([
+// 	['question', 'What is the best programming language in the world?'],
+// 	[1, 'C'],
+// 	[2, 'Java'],
+// 	[3, 'Javascript'],
+// 	['correct', 3],
+// 	[true, 'Correct!'],
+// 	[false, 'Try again!'],
+// ]);
+
+// console.log(question);
+
+// Converting objects to maps
+// const hoursMap = new Map(Object.entries(openingHours));
+// console.log(hoursMap);
+
+// Quiz app
+// console.log(question.get('question'));
+// for (const [key, value] of question) {
+// 	if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+// }
+
+// const answer = Number(prompt('Your answer'));
+// const result = question.get(answer === question.get('correct'));
+// console.log(result);
+
+// Convert map to array
+// console.log([...question]);
+// console.log([...question.entries()]);
+// console.log([...question.keys()]);
+// console.log([...question.values()]);
+
+// Maps
+// const rest = new Map();
+// rest.set('name', 'Classico Italiano');
+// rest.set(1, 'Firenze, Italy');
+// rest.set(2, 'Lizbon, Portugal');
+// rest.set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+// 	.set('open', 11)
+// 	.set('close', 23)
+// 	.set(true, 'We are open :D')
+// 	.set(false, 'We are closed :(');
+
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
+// console.log(rest.get(1));
+// console.log(rest);
+
+// const time = 21;
+// console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// console.log(rest.has('categories'));
+// rest.delete(2);
+// console.log(rest);
+// console.log(rest.size);
+// rest.clear();
+
+// const arr = [1, 2];
+// rest.set(arr, 'Test');
+// rest.set(document.querySelector('h1'), 'Heading');
+// console.log(rest);
+// console.log(rest.get(arr));
+
+// Sets
+// Sets store unique elements in the array, if an element is repeated, it will
+// not duplicate that element in the set.
+// const ordersSet = new Set([
+// 	'Pasta',
+// 	'Pizza',
+// 	'Pizza',
+// 	'Risotto',
+// 	'Pasta',
+// 	'Pizza',
+// ]);
+
+// console.log(ordersSet);
+// console.log(new Set('Jonas'));
+// console.log(ordersSet.size);
+// console.log(ordersSet.has('Pizza'));
+// console.log(ordersSet.has('Bread'));
+
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+// ordersSet.delete('Risotto');
+// console.log(ordersSet);
+// console.log(ordersSet[0]); // undefined
+// ordersSet.clear();
+
+// console.log(ordersSet);
+
+// for (const order of ordersSet) console.log(order);
+
+// Example
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// const staffUnique = [...new Set(staff)];
+// console.log(staffUnique);
+// console.log(new Set(staff).size);
+// console.log(new Set('jonasschmedtmann').size);
+
 // Looping objects
 // Property NAMES
 // const properties = Object.keys(openingHours);
