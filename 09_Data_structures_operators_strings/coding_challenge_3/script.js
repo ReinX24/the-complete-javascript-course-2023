@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 const gameEvents = new Map([
 	[17, '⚽ GOAL'],
@@ -14,16 +14,22 @@ const gameEvents = new Map([
 	[92, '🔶 Yellow card'],
 ]);
 
-// 1. 
-const eventMap = new Set();
-for (const [time, event] of [...gameEvents]) {
-    eventMap.add(event);
-}
-const events = [...eventMap];
+// 1.
+const events = [...new Set(gameEvents.values())];
 console.log(events);
 
-// 2. 
+// 2.
 gameEvents.delete(64);
 console.log(gameEvents);
 
-// TODO: finish 3 and 4
+// 3.
+const time = [...gameEvents.keys()].pop();
+console.log(
+	`An event happened, on average, every ${time / gameEvents.size} minutes`
+);
+
+// 4.
+for (const [time, event] of [...gameEvents]) {
+	const half = time <= 45 ? 'FIRST' : 'SECOND';
+	console.log(`[${half} HALF] ${time}: ${event}`);
+}

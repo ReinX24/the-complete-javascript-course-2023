@@ -1,47 +1,126 @@
 'use strict';
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+// Working with strings 2
+// TODO: resume Working with strings 2
+const airline = 'TAP Air Portugal';
 
-const openingHours = {
-	[weekdays[3]]: {
-		open: 12,
-		close: 22,
-	},
-	[weekdays[4]]: {
-		open: 11,
-		close: 23,
-	},
-	// [`day-${2 + 4}`]: {
-	[weekdays[5]]: {
-		open: 0, // Open 24 hours
-		close: 24,
-	},
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
+
+// Fix capitalization in name
+// const passenger = 'jOnas';
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect = passenger[0].toUpperCase() + passengerLower.slice(1);
+
+// console.log(passengerCorrect);
+
+// Comparing email
+// const email = 'hello@jonas.io';
+// const loginEmail = '    Hello@Jonas.Io    \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
+
+// Replacing
+// const priceGB = '288,97€'; // 288.97
+// const priceUS = priceGB.replace('€', '$').replace(',', '.');
+// console.log(priceUS);
+
+const announcement =
+	'All passengers come to boarding door 23. Boarding door 23!';
+
+console.log(announcement.replace('door', 'gate'));
+
+// Working with strings
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log('B737'[0]);
+
+// console.log(airline.length);
+// console.log('B737'.length);
+
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.indexOf('Portugal'));
+
+// console.log(airline.slice(4));
+// console.log(airline.slice(4, 7));
+
+// console.log(airline.slice(0, airline.indexOf(' '))); // first word
+// console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // last word
+
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1, -1));
+
+/*
+const checkMiddleSeat = function (seat) {
+	// B and E are middle seats
+	const seatLetter = seat.slice(-1);
+	if (seatLetter === 'B' || seatLetter === 'E') {
+		console.log('You got the middle seat');
+	} else {
+		console.log('You got lucky');
+	}
 };
 
-const restaurant = {
-	name: 'Classico Italiano',
-	location: 'Via Angelo Tavanti 23, Firenze, Italy',
-	categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-	starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-	mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
 
-	// ES6 enhanced object literals
-	openingHours,
+console.log(typeof new String('jonas').slice(1));
+*/
 
-	order(starterIndex, mainIndex) {
-		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-	},
+// const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-	orderPasta(ing1, ing2, ing3) {
-		console.log(
-			`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
-		);
-	},
+// const openingHours = {
+// 	[weekdays[3]]: {
+// 		open: 12,
+// 		close: 22,
+// 	},
+// 	[weekdays[4]]: {
+// 		open: 11,
+// 		close: 23,
+// 	},
+// 	// [`day-${2 + 4}`]: {
+// 	[weekdays[5]]: {
+// 		open: 0, // Open 24 hours
+// 		close: 24,
+// 	},
+// };
 
-	orderPizza(mainIngredient, ...otherIngredients) {
-		console.log(mainIngredient, otherIngredients);
-	},
-};
+// const restaurant = {
+// 	name: 'Classico Italiano',
+// 	location: 'Via Angelo Tavanti 23, Firenze, Italy',
+// 	categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+// 	starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+// 	mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+// 	// ES6 enhanced object literals
+// 	openingHours,
+
+// 	order(starterIndex, mainIndex) {
+// 		return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+// 	},
+
+// 	orderPasta(ing1, ing2, ing3) {
+// 		console.log(
+// 			`Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
+// 		);
+// 	},
+
+// 	orderPizza(mainIngredient, ...otherIngredients) {
+// 		console.log(mainIngredient, otherIngredients);
+// 	},
+// };
 
 // Maps iteration
 // const question = new Map([
