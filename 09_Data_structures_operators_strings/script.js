@@ -1,8 +1,20 @@
 'use strict';
 
+// Working with strings 3
+// Converting the string into an array
+// console.log('a+very+nice+string'.split('+'));
+// console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] ='Jonas Schmedtmann'.split(' '); 
+console.log(firstName, lastName);
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+// TODO: resume @3:51
+
 // Working with strings 2
-// TODO: resume Working with strings 2
-const airline = 'TAP Air Portugal';
+// const airline = 'TAP Air Portugal';
 
 // console.log(airline.toLowerCase());
 // console.log(airline.toUpperCase());
@@ -31,10 +43,37 @@ const airline = 'TAP Air Portugal';
 // const priceUS = priceGB.replace('€', '$').replace(',', '.');
 // console.log(priceUS);
 
-const announcement =
-	'All passengers come to boarding door 23. Boarding door 23!';
+// const announcement =
+// 	'All passengers come to boarding door 23. Boarding door 23!';
 
-console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+// console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+// const plane = 'Airbus A320neo';
+// console.log(plane.includes('A320')); // true
+// console.log(plane.includes('Boeing')); // false
+// console.log(plane.startsWith('Airb'));
+
+// if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+// 	console.log('Part of the NEW Airbus family');
+// }
+
+// Practice exercise
+// const checkBaggage = function (items) {
+// 	const baggage = items.toLowerCase();
+// 	// const baggage = items;
+// 	if (baggage.includes('knife') || baggage.includes('gun')) {
+// 		console.log('You are NOT allowed on board');
+// 	} else {
+// 		console.log('Welcome aboard!');
+// 	}
+// };
+
+// checkBaggage('I have a laptop, some Food, and a pocket Knife');
+// checkBaggage('Socks and camera');
+// checkBaggage('Got some snucks and a gun for protection');
 
 // Working with strings
 // const airline = 'TAP Air Portugal';
