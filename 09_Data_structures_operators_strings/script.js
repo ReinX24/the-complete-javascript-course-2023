@@ -5,13 +5,59 @@
 // console.log('a+very+nice+string'.split('+'));
 // console.log('Jonas Schmedtmann'.split(' '));
 
-const [firstName, lastName] ='Jonas Schmedtmann'.split(' '); 
-console.log(firstName, lastName);
+// const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+// console.log(firstName, lastName);
 
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
-console.log(newName);
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join('----');
+// console.log(newName);
 
-// TODO: resume @3:51
+// const capitalizeName = function (name) {
+// Video solution
+// const names = name.split(' ');
+// const namesUpper = [];
+// for (const n of names) {
+// 	namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+// }
+// console.log(namesUpper.join(' '));
+
+// My solution
+// const eachWord = name.split(' ');
+// const capitalized = [];
+// for (const word of eachWord) {
+// 	capitalized.push(word[0].toUpperCase() + word.slice(1));
+// }
+// console.log(capitalized.join(' '));
+// };
+
+// capitalizeName('jessice ann smith davis');
+// capitalizeName('jonas schmedtmann');
+
+// Padding
+// const message = 'Go to gate 23!';
+// console.log(message.padStart(25, '+').padEnd(30, '+'));
+// console.log('Jonas'.padStart(20, '+').padEnd(30, '+'));
+
+// const maskCreditCard = function (number) {
+// 	const str = number.toString();
+// 	const last = str.slice(-4);
+// 	return last.padStart(str.length, '*');
+// };
+
+// console.log(maskCreditCard(45678912));
+// console.log(maskCreditCard(23904890285020));
+// console.log(maskCreditCard('845906882320322342'));
+
+// Repeat
+// const message = 'Bad weather... All Departures Delayed ';
+// console.log(message.repeat(5));
+
+// const planesInLine = function (n) {
+// 	console.log(`There are ${n} planes in line ${'✈'.repeat(n)}`);
+// };
+
+// planesInLine(5);
+// planesInLine(3);
+// planesInLine(12);
 
 // Working with strings 2
 // const airline = 'TAP Air Portugal';
