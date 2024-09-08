@@ -30,28 +30,56 @@ Afterwards, test with your own test data!
 GOOD LUCK 😀
 */
 
-document.body.append(document.createElement('textarea'));
-document.body.append(document.createElement('button'));
-
-const convertToCamelCase = function (str) {
-	const words = str.split('_');
-	words[1] = words[1][0].toUpperCase() + words[1].slice(1);
-	console.log(words.join(''));
-};
-
-document.querySelector('button').addEventListener('click', () => {
+const personalSolution = () => {
 	const text = document.querySelector('textarea').value;
 
 	// Splitting each word line by line and removing whitespaces
 	const words = text.split('\n');
 
-	for (let word of words) {
-		word = word.replace(/\s/g, '');
-		// word = word.split('_');
-		// word[1] = words[1][0].toUpperCase() + words[1].slice(1);
-		// console.log(word);
+	// Iterating through the string array
+	for (let i = 0; i < words.length; i++) {
+		// Removing whitespace, making all letters lowercase, and splitting
+		// into an array of 2 words
+		let wordFormatted = words[i]
+			.replace(/\s/g, '')
+			.toLowerCase()
+			.split('_');
+		// Making the first character in the second word uppercase
+		wordFormatted[1] =
+			wordFormatted[1][0].toUpperCase() + wordFormatted[1].slice(1);
+		// Logging the word
+		console.log(
+			wordFormatted.join('').padEnd(20, ' ') + '✅'.repeat(i + 1)
+		);
 	}
+};
 
-	// words[1] = words[1][0].toUpperCase() + words[1].slice(1);
-	// console.log(words.join(''));
-});
+const chapterSolution = () => {
+	const text = document.querySelector('textarea').value;
+	const rows = text.split('\n');
+
+	for (const [i, row] of rows.entries()) {
+		const [first, second] = row.toLowerCase().trim().split('_');
+		// console.log(row, first, second);
+		const output =
+			`${first}${second.replace(
+				second[0],
+				second[0].toUpperCase()
+			)}`.padEnd(20) + '✅'.repeat(i + 1);
+		console.log(output);
+	}
+};
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+// document.querySelector('button').addEventListener('click', personalSolution);
+document.querySelector('button').addEventListener('click', chapterSolution);
+
+/* underscore_case -> underscoreCase
+underscore_case
+ first_name
+Some_Variable
+  calculate_AGE
+delayed_departure
+*/
