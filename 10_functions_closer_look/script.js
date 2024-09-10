@@ -1,11 +1,58 @@
 'use script';
 
-// TODO: resume @1:15 (07 Functions Returning Functions)
+// TODO: continue @12:14 008 The call and apply methods
+const lufthansa = {
+	airline: 'Lufthansa',
+	iataCode: 'LH',
+	bookings: [],
+	book(flightNum, name) {
+		console.log(
+			`${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+		);
+		this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+	},
+};
+
+lufthansa.book(239, 'Jonas Schmedtmann');
+lufthansa.book(635, 'John Smith');
+console.log(lufthansa.bookings);
+
+const eurowings = {
+	name: 'Eurowings',
+	iataCode: 'EW',
+	bookings: [],
+};
+
+const book = lufthansa.book; // storing the function in a variable
+
+// Does NOT work
+// book(23, 'Sarah Williams');
+
+// Setting which object the function will be used on
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 239, 'Mary Cooper');
+console.log(lufthansa);
+
+/*
 const greet = function (greeting) {
 	return function (name) {
 		console.log(`${greeting} ${name}`);
 	};
 };
+
+// Arrow function version
+const greetArr = (greeting) => (name) => console.log(`${greeting} ${name}`);
+
+const greeterHey = greet('Hey');
+
+greeterHey('Jonas'); // calling the stored function
+greeterHey('Stevens');
+
+greet('Hello')('Jonas'); // calling the function as its instantiated
+greet('Hi')('Jonas');
+*/
 
 /*
 const oneWord = function (str) {
